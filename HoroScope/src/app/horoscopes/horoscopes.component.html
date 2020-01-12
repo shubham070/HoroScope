@@ -1,0 +1,18 @@
+<div class="col-md-12">
+
+  <div class="col-md-4">
+      <horoscope-list (horoscopeSelected)="horoscopeSelected=$event"> 
+        
+      </horoscope-list>    
+  </div>
+ <div class="col-md-8">
+  <horoscope-detail  [monthlySelected]=true
+                     [dailySelected]=true
+                     [weeklySelected]=true
+                     [horoscopeSelected]="horoscopeSelected">
+   </horoscope-detail>
+ 
+  </div>
+
+</div>
+

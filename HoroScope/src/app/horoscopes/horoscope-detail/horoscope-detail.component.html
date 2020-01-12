@@ -1,0 +1,67 @@
+<div>
+<div class="row">
+  <div class="col-xs-12">
+    <img src="{{horoscopeSelected?.imagepath}}" alt="" class="img-responsive" style="border-radius: 200px; margin-left:200px;">
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <h1><b> <span style="color:gold; margin-left: 200px;">{{horoscopeSelected?.name}}</span></b></h1>
+  </div>
+   <div *ngIf=horoscopeSelected?.name>
+            <!-- dailySelected=false; monthlySelected = false;weeklySelected=false; -->
+      <div class="col-xs-12">
+      <div style="margin-left: 200px;">
+      <button  class="btn btn-success" (click)='getDailyPredictions(horoscopeSelected?.name)'>Daily Predications</button>
+      <button class="btn btn-primary" (click)='getMonthlyPredictions(horoscopeSelected?.name)'>Monthly Predictions</button>
+      <button class="btn btn-danger" (click)='getWeeklyPredictions(horoscopeSelected?.name)'>Weekly Predictions</button>
+   </div>
+  
+</div>
+<hr>
+
+<div *ngIf=horoscopeSelected?.flag id="details" class="row">
+  <div *ngIf='monthlySelected' class="col-xs-12">
+    <span style="color: whitesmoke; margin-left: 300px;">
+    Details of your Horoscope for  {{Monthly?.month}}
+    </span>
+    <br/>
+    <br/>
+    <span style="color:whitesmoke">
+    {{Monthly?.horoscope}}
+    </span>
+    <br/>
+   
+  </div>
+  <div *ngIf='weeklySelected' class="col-xs-12">
+    <span style="color: whitesmoke; margin-left: 300px;">
+      <b>
+      Details of your Horoscope for  {{Weekly?.week}}
+      </b>
+    </span>
+    <br/>
+    <br/>
+    <span style="color: whitesmoke">
+    {{Weekly?.horoscope}}
+   </span>
+    <br/>
+   
+  </div>
+  <div *ngIf='dailySelected' class="col-xs-12">
+    <span style="color: whitesmoke;margin-left: 300px;">
+      <b>
+    Details of your Horoscope for  {{Daily?.date}}
+      </b>  
+    </span>
+    <br/>
+    <br/>
+    <span style="color: whitesmoke">
+    {{Daily?.horoscope}}
+   </span>
+    <br/>
+   
+  </div>
+</div>
+ 
+
+</div>
